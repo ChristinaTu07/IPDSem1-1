@@ -7,11 +7,12 @@
 #     move: A function that returns 'c' or 'b'
 ####
 
-team_name = 'Christinaaaa 6' # Only 10 chars displayed.
-strategy_name = 'Mainly betraying'
+team_name = 'Christinaaa 6' # Only 10 chars displayed.
+strategy_name = 'Mainly Colluding'
 strategy_description = '''
 At the beginning, collude.
-'If their history has betray in list, betray all the way. If their history has collude in list, then betray all the way.
+'If the latest move of my history is b and their's is c, betray. 
+If their history 2 c's in their latest move, collude.
 
 '''
 
@@ -20,12 +21,14 @@ At the beginning, collude.
 def move(my_history, their_history, my_score, their_score):
     if len(my_history) == 0:
         return 'c'
-    if len(their_history[-1]) == 'c':
-        return 'b'
-    else:
+    elif (my_history[-1]) == 'c' and (their_history[-1]) == 'c':
         return 'c'
-    if 'b' in their_history:
-        return 'b'
+    if len(their_history[:-1]):
+       return (their_history[-1])
+  
+       
+  
+    
         
         
     
